@@ -20,3 +20,21 @@ bool estCarre(vector<vector<int>> matrice){
 
    return matrice.size() == matrice.at(0).size();
 }
+
+void afficherVectorInt(vector <int> ligne){
+    cout<<"(";
+    for (size_t i = 0 ; i < ligne.size() ; ++i){
+        cout<<ligne[i]; (i+1)==ligne.size()?cout<<")":cout<<",";
+    }
+    //cout<<")";
+}
+
+void afficherMatriceInt(vector <vector <int>> matrice){
+
+    //cout<<"[";
+    for (size_t i = 0 ; i < matrice.size() ; ++i ){
+        i==0?cout<<"[":cout<<" ";
+        afficherVectorInt(matrice[i]); (i+1)==matrice.size()?cout<<"]":cout<<","<<endl;
+    }
+    //cout<<"]";
+}

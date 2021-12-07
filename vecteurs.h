@@ -7,4 +7,9 @@
 
 bool estCarre(std::vector<std::vector<int>> matrice);
 
+void afficherVectorInt(vector <int> ligne);
+
+void afficherMatriceInt(vector <vector <int>> matrice);
+
+
 #endif //LABO_07_VECTEURS_H

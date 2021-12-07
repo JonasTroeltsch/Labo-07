@@ -13,3 +13,10 @@ Compilateur    : Mingw-w64 g++ 11.2.0
 #include <iostream>
 #include <vector>
 #include "vecteurs.h"
+
+using namespace std;
+
+bool estCarre(vector<vector<int>> matrice){
+
+   return matrice.size() == matrice.at(0).size();
+}

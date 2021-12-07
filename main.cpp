@@ -12,18 +12,16 @@ Compilateur    : Mingw-w64 g++ 11.2.0
 #include <cstdlib>
 #include <iostream>
 #include <vector>
+#include "vecteurs.h"
 
 using namespace std;
-
-int main() {
 
 using Ligne = vector<int>;
 using Matrice = vector<Ligne>;
 
+int main() {
+
+
  return EXIT_SUCCESS;
 }
 
-bool estCarre(vector<vector<int>> matrice){
-
-   return matrice.size() == matrice.at(0).size();
-}

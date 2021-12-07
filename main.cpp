@@ -21,6 +21,12 @@ using Matrice = vector<Ligne>;
 
 int main() {
 
+   Matrice matrice = {  {1,2}
+                        ,{1,3}
+                        ,{1,3}};
+
+   cout<< estReguliere(matrice)<<endl;
+   cout<< estCarre(matrice)<<endl;
 
  return EXIT_SUCCESS;
 }

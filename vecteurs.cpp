@@ -12,13 +12,28 @@ Compilateur    : Mingw-w64 g++ 11.2.0
 #include <cstdlib>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "vecteurs.h"
 
 using namespace std;
 
-bool estCarre(vector<vector<int>> matrice){
+bool size_compare(const vector<int>& ligne1,const vector<int>& ligne2){
+   return ligne1.size() < ligne2.size();
+}
 
-   return matrice.size() == matrice.at(0).size();
+bool size_equal(const vector<int>& ligne1,const vector<int>& ligne2){
+   return ligne1.size() == ligne2.size();
+}
+
+bool estReguliere(vector<vector<int>> matrice){
+   return min_element(matrice.begin(),matrice.end(), size_compare) == max_element
+   (matrice.begin(),matrice.end(), size_compare);
+}
+bool estCarre(vector<vector<int>> matrice){
+   if(estReguliere(matrice)){
+      return matrice.size() == matrice.at(0).size();
+   }
+   return false;
 }
 
 void afficherVectorInt(vector <int> ligne){

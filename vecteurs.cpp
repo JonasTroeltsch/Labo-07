@@ -38,18 +38,14 @@ bool estCarre(vector<vector<int>> matrice){
 
 void afficherVectorInt(vector <int> ligne){
     cout<<"(";
-    for (size_t i = 0 ; i < ligne.size() ; ++i){
-        cout<<ligne[i]; (i+1)==ligne.size()?cout<<")":cout<<",";
+    for (vector<int>::iterator it = ligne.begin() ; it!= ligne.end() ; ++it){
+        cout<<*it; (it+1)==ligne.end()?cout<<")":cout<<",";
     }
-    //cout<<")";
 }
 
 void afficherMatriceInt(vector <vector <int>> matrice){
-
-    //cout<<"[";
-    for (size_t i = 0 ; i < matrice.size() ; ++i ){
-        i==0?cout<<"[":cout<<" ";
-        afficherVectorInt(matrice[i]); (i+1)==matrice.size()?cout<<"]":cout<<","<<endl;
+    for (vector<vector<int>>::iterator it = matrice.begin() ; it != matrice.end() ; ++it ){
+        it==matrice.begin()?cout<<"[":cout<<" ";
+        afficherVectorInt(*it); (it+1)==matrice.end()?cout<<"]":cout<<","<<endl;
     }
-    //cout<<"]";
 }

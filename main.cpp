@@ -21,6 +21,16 @@ using Matrice = vector<Ligne>;
 
 int main() {
 
+    Ligne l1 = {1,2,3,4,5};
+
+    Matrice m1 = {l1,l1,l1,l1,l1};
+
+    afficherVectorInt(l1);
+
+    cout<<endl<<endl;
+
+    afficherMatriceInt(m1);
+
 
  return EXIT_SUCCESS;
 }

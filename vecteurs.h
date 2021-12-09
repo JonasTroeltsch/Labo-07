@@ -1,16 +1,27 @@
-//
-// Created by jonas on 7/12/2021.
-//
 
 #ifndef LABO_07_VECTEURS_H
 #define LABO_07_VECTEURS_H
 
-bool estCarre(std::vector<std::vector<int>> matrice);
-bool estReguliere(std::vector<std::vector<int>> matrice);
+using Ligne = std::vector<int>;
+using Matrice = std::vector<Ligne>;
 
-void afficherVectorInt(std::vector <int> ligne);
+bool estCarre(Matrice matrice);
 
-void afficherMatriceInt(std::vector <std::vector <int>> matrice);
+bool estReguliere(Matrice matrice);
 
+size_t minCol(const Matrice& matrice);
 
+void shuffleMatrice(Matrice& matrice);
+
+void sortMatrice(Matrice& matrice);
+
+Ligne vectSommeMin(const Matrice& matrice);
+
+Ligne sommeLigne(const Matrice& matrice);
+
+Ligne sommeColonne (const Matrice& Matrice);
+
+std::ostream& operator << (std::ostream& NewStream, const Ligne& v);
+
+std::ostream& operator << (std::ostream& NewStream, const Matrice& m);
 #endif //LABO_07_VECTEURS_H

@@ -4,7 +4,7 @@ Nom du fichier : main.cpp
 Non du labo    : Labo 7 Matrices
 Auteur(s)      : Jonas Troeltsch et Vincent Bruzzese
 Date creation  : 07.12.2021
-But            :
+But            : montrer le bon fonctionnement de librairieMatrices
 Remarque(s)    :
 Compilateur    : Mingw-w64 g++ 11.2.0
 -----------------------------------------------------------------------------------
@@ -12,17 +12,19 @@ Compilateur    : Mingw-w64 g++ 11.2.0
 #include <cstdlib>
 #include <iostream>
 #include <vector>
-#include "vecteurs.h"
+#include "librairieMatrices.h"
 
 using namespace std;
+
 using Ligne = vector<int>;
 using Matrice = vector<Ligne>;
 
 int main() {
-   Ligne l1 = {1,2,3,4,5};
-   Matrice m1 = {l1,l1,l1,l1,l1};
 
-   Matrice matrice;
+   //Vous pouvez modifier cette matrice pour tester la librairie
+   Matrice matrice = {{1,2,3},
+                      {4,5,6},
+                      {7,8,9}};
 
    cout<<"la matrice est regulière (0 = non, 1 = oui):"<< estReguliere(matrice)
    <<endl;
@@ -34,9 +36,8 @@ int main() {
    cout<< "la somme des lignes est : "<<sommeLigne(matrice)<<endl;
    cout<< "la somme des collonnes est : "<<sommeColonne(matrice)<<endl;
 
-   cout<<"le vecteur dont la somme des valeurs est la plus faible "
-         ":"<<endl<<vectSommeMin
-   (matrice)<<endl;
+   cout<<"le vecteur dont la somme des valeurs est la plus faible :"<<endl
+   <<vectSommeMin(matrice)<<endl;
 
    shuffleMatrice(matrice);
    cout<<"La matrice mélangé aléatoirement"<<endl<<matrice<<endl;
@@ -45,8 +46,6 @@ int main() {
    cout<<"la matrice trié dans l’ordre croissant en fonction de "
          "l’élément min d’un vecteur."<<endl<<matrice<<endl;
    cout<<endl;
-
-
 
  return EXIT_SUCCESS;
 }
